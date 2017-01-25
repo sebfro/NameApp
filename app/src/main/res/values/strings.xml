@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">NameApp</string>
     <string name="main_menu">Back to Menu</string>
+    <string name="title_activity_name_list">NameListActivity</string>
+    <string name="title_activity_add_image">AddImageActivity</string>
 </resources>

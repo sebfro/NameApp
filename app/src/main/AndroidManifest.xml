@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nameapp">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +20,12 @@
         <activity android:name=".GalleryActivity" />
         <activity android:name=".ListActivity" />
         <activity android:name=".NamesActivity" />
-        <activity android:name=".learningMode"></activity>
+        <activity android:name=".learningMode" />
+        <activity android:name=".NameListActivity" />
+        <activity
+            android:name=".AddImageActivity"
+            android:label="@string/title_activity_add_image" />
+        <activity android:name=".EnterNameActivity"></activity>
     </application>
 
 </manifest>

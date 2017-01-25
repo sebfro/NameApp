@@ -25,7 +25,6 @@ public class NamesActivity extends AppCompatActivity {
     }
 
     public void nameClicked(View v){
-        //TextView temp = v.get
         TextView tV = (TextView)findViewById(R.id.label);
         Toast.makeText(getApplicationContext(), tV.getText(),Toast.LENGTH_SHORT).show();
     }
