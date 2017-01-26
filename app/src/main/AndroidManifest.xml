@@ -25,7 +25,8 @@
         <activity
             android:name=".AddImageActivity"
             android:label="@string/title_activity_add_image" />
-        <activity android:name=".EnterNameActivity"></activity>
+        <activity android:name=".EnterNameActivity" />
+        <activity android:name=".DisplayScoreActivity"></activity>
     </application>
 
 </manifest>

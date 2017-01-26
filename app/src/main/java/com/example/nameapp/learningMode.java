@@ -37,6 +37,8 @@ public class learningMode extends AppCompatActivity {
         num = rand.nextInt(3) + 1;
 
         ImageView image = (ImageView) findViewById(R.id.imageView2);
+        EditText editText = (EditText) findViewById(R.id.guessText);
+        editText.setText("");
 
         if (num == 1) {
             image.setImageResource(R.drawable.img1);
@@ -46,36 +48,26 @@ public class learningMode extends AppCompatActivity {
             right_ans = "daniel";
         } else {
             image.setImageResource(R.drawable.img3);
-            right_ans = "tiger";
+            right_ans = "fedme";
         }
     }
 
 
     public void mainMenu(View v) {
 
-        Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
-        CharSequence text = "";
-
-        TextView tw = (TextView)findViewById(R.id.score);
-        text = tw.getText();
-
-        Intent i = getIntent();
-        finish();
-
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, DisplayScoreActivity.class);
+        TextView tw = (TextView) findViewById(R.id.score);
+        String message = tw.getText().toString();
+        intent.putExtra(MESSAGE, message);
         startActivity(intent);
     }
 
     public void guess (View v) {
         ImageView i = (ImageView) findViewById(R.id.imageView2);
-        String check = i.getDrawable().toString().toLowerCase();
         EditText editText = (EditText) findViewById(R.id.guessText);
-        String answer = editText.getText().toString();
-        answer.toLowerCase();
+        String answer = editText.getText().toString().toLowerCase();
 
 
-        //Til Toast svar
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
         CharSequence text = "";
@@ -84,24 +76,18 @@ public class learningMode extends AppCompatActivity {
             text = "Du gjettet riktig!";
             score++;
             updateScore(score);
-            setImage();
+
         } else {
             text = "Du gjettet feil. Prøv igjen!";
 
         }
 
         Toast.makeText(context, text, duration).show();
+        setImage();
     }
 
     public void updateScore(int score) {
         TextView tw = (TextView)findViewById(R.id.score);
         tw.setText("Score: " + score);
     }
-
-    public void restart(View v) {
-        setImage();
-    }
-
-
-
 }
